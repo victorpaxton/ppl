@@ -1,1 +1,1 @@
-duy,.,tran2903,<EOF>
+abc,id1,id2,_id,id__1,for,<EOF>

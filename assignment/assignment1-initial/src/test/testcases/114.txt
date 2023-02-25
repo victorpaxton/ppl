@@ -1,1 +1,1 @@
-1.2e3
+ "He asked me:\t \"Where is John?\"" 

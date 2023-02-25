@@ -149,7 +149,7 @@ FLOATLIT: (INTLIT DECPART | INTLIT DECPART? EXPPART)  {self.text = self.text.rep
 fragment DECPART: '.' DIGIT*;
 fragment EXPPART: [eE] [-+]? DIGIT+;
 
-BOOLLIT: 'true' | 'false' ;
+BOOLLIT: TRUE | FALSE ;
 
 // String literal
 UNCLOSE_STRING: '"' (ESC | ~[\\"])*  { raise UncloseString(self.text[1:]) } ;

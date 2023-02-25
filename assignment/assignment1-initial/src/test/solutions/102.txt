@@ -1,1 +1,1 @@
-_a,<EOF>
+_,Error Token @

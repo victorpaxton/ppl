@@ -1,1 +1,1 @@
-This's a string containing tab?,<EOF>
+<EOF>

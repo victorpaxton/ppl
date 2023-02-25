@@ -1,1 +1,1 @@
-Illegal Escape In String: ...a\c
+<EOF>

@@ -27,8 +27,11 @@ class ParserSuite(unittest.TestCase):
                 return n * fact(n - 1);
             }
         }
-        inc: function void(out n: integer, delta: integer) {
+        inc: function void(inherit out  n: integer, delta: integer) {
             n = n + delta;
+            for (i = 1, i < 10, i + 1) {
+writeInt(i);
+}
             return;
         }
         main: function void() {

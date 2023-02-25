@@ -1,1 +1,1 @@
-1.2e3,<EOF>
+He asked me:\t \"Where is John?\",<EOF>
