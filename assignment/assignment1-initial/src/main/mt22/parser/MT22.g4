@@ -28,7 +28,7 @@ shortvardecl: idlist COLON vartyp SEMI;
 idlist: IDENTIFIER COMMA idlist | IDENTIFIER ;
 
 fullvardecl: varinit SEMI ;
-varinit: IDENTIFIER COMMA varinit COMMA exprpime | IDENTIFIER COLON vartyp EQ exprpime ;
+varinit: IDENTIFIER COMMA varinit COMMA expr | IDENTIFIER COLON vartyp EQ expr ;
 vartyp: atomtype | arraytype | autotype ;
 
 
@@ -58,14 +58,13 @@ whilestmt: WHILE LB expr RB stmt;
 dowhilestmt: DO blockstmt WHILE LB expr RB SEMI;
 breakstmt: BREAK SEMI ;
 continuestmt: CONTINUE SEMI ;
-returnstmt: RETURN retexpr SEMI;
-retexpr: expr | ;
+returnstmt: RETURN (expr | ) SEMI;
 callstmt: IDENTIFIER LB exprlist RB SEMI;
 
 
 /*********** Expressions list *******************/
-exprlist: exprpime | ;
-exprpime: expr COMMA exprpime | expr ;
+exprlist: exprprime | ;
+exprprime: expr COMMA exprprime | expr ;
 
 expr: expr1 CONCAT expr1 | expr1 ;
 expr1: expr2 (EQUAL | NOT_EQUAL | LT | GT | LE | GE) expr2 | expr2 ;

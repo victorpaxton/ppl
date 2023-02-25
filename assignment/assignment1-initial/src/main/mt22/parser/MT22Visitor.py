@@ -154,11 +154,6 @@ class MT22Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MT22Parser#retexpr.
-    def visitRetexpr(self, ctx:MT22Parser.RetexprContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MT22Parser#callstmt.
     def visitCallstmt(self, ctx:MT22Parser.CallstmtContext):
         return self.visitChildren(ctx)
@@ -169,8 +164,8 @@ class MT22Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MT22Parser#exprpime.
-    def visitExprpime(self, ctx:MT22Parser.ExprpimeContext):
+    # Visit a parse tree produced by MT22Parser#exprprime.
+    def visitExprprime(self, ctx:MT22Parser.ExprprimeContext):
         return self.visitChildren(ctx)
 
 
