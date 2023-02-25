@@ -44,9 +44,10 @@ paramout: OUT | ;
 funcinher: INHERIT IDENTIFIER | ;
 
 
-blockstmt: LP stmtlist RP;
+/*********** Statements *******************/
 stmtlist: stmt stmtlist | ;
-stmt: vardecl | assignstmt | ifstmt | forstmt | whilestmt | dowhilestmt | breakstmt | continuestmt | returnstmt | callstmt | blockstmt ;
+stmt: blockstmt | vardecl | assignstmt | ifstmt | forstmt | whilestmt | dowhilestmt | breakstmt | continuestmt | returnstmt | callstmt | blockstmt ;
+blockstmt: LP stmtlist RP;
 
 assignstmt: lhs EQ expr SEMI;
 lhs: IDENTIFIER | arrayele;

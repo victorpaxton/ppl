@@ -346,7 +346,7 @@ class MT22Lexer(Lexer):
 
     def INTLIT_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 0:
-            print(self.text)
+            self.text = self.text.replace("_", "")
      
 
     def FLOATLIT_action(self, localctx:RuleContext , actionIndex:int):
