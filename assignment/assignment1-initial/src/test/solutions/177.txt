@@ -1,1 +1,1 @@
-<EOF>
+a,:,integer,=,(,int,),(,8.7,),<EOF>

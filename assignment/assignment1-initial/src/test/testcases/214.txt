@@ -1,0 +1,1 @@
+func1: function integer (p1: integer) inherit func2 {}

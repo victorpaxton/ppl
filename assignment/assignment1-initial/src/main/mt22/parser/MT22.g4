@@ -74,7 +74,7 @@ expr4: expr4 (MUL | DIV | MOD) expr5 | expr5 ;
 expr5: NOT expr5 | expr6 ;
 expr6: SUB expr6 | expr7 ;
 // expr7: IDENTIFIER LSB expr8 RSB | expr8 ;
-expr7: subexpr | arrayele | funccall | IDENTIFIER | INTLIT | FLOATLIT | BOOLLIT | STRINGLIT;
+expr7: subexpr | arrayele | funccall | IDENTIFIER | INTLIT | FLOATLIT | BOOLLIT | STRINGLIT | arraylit;
 
 subexpr: LB expr RB;
 arrayele: IDENTIFIER LSB exprlist RSB ;
@@ -101,6 +101,8 @@ BLOCK_COMMENT: '/*' .*? '*/' -> skip;
 LINE_COMMENT: '//' ~[\r\n]* -> skip;
 
 /*********** Keywords *******************/
+BOOLLIT: TRUE | FALSE ;
+
 AUTO: 'auto' ;
 BREAK: 'break' ;
 BOOLEAN: 'boolean' ;
@@ -149,7 +151,7 @@ FLOATLIT: (INTLIT DECPART | INTLIT DECPART? EXPPART)  {self.text = self.text.rep
 fragment DECPART: '.' DIGIT*;
 fragment EXPPART: [eE] [-+]? DIGIT+;
 
-BOOLLIT: TRUE | FALSE ;
+
 
 // String literal
 UNCLOSE_STRING: '"' (ESC | ~[\\"])*  { raise UncloseString(self.text[1:]) } ;

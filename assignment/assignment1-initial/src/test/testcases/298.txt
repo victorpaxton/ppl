@@ -1,0 +1,6 @@
+
+        x: integer = 5;
+        fact: function integer (n: integer) {
+        }
+        fact(x);
+        

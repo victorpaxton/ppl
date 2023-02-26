@@ -1,0 +1,1 @@
+func1: function integer (out inherit p1: integer) {}

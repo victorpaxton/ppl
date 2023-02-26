@@ -1,1 +1,1 @@
-<EOF>
+salary,=,1200,Error Token $

@@ -1,1 +1,1 @@
- 
+a: integer = 2023 mod 2;

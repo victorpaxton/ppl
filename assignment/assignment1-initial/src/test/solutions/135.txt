@@ -1,1 +1,1 @@
-<EOF>
+,::,string2,::,string3,<EOF>

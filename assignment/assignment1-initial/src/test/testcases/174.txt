@@ -1,1 +1,1 @@
- 
+s: stringConcat = "string1" + "string2"; 

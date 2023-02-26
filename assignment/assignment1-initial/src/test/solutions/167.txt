@@ -1,1 +1,1 @@
-<EOF>
+id,:,CHAR,=,Error Token '

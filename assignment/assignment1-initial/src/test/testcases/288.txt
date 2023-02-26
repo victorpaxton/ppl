@@ -1,0 +1,10 @@
+
+        main: function void() {
+            for (i = 0, i < 100, i+1) {
+                a: integer = 2023;
+                for (j=0,j<i,j+1) {
+                    
+                }
+            }
+        }
+        

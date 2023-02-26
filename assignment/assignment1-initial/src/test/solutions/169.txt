@@ -1,1 +1,1 @@
-<EOF>
+flag,:,boolean,=,true,&&,false,;,<EOF>

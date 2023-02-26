@@ -1,0 +1,8 @@
+
+        x: integer = 65;
+        for (i = x; i < 100; i + 1) {
+            i = i + 1;
+        }
+        main: function void() {
+        }
+        

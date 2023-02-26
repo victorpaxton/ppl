@@ -1,1 +1,3 @@
- 
+
+        fact: function integer (n: integer ) inherit
+        

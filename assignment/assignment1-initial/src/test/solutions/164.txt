@@ -1,1 +1,1 @@
-<EOF>
+return,;,return,result,;,return,<EOF>

@@ -1,1 +1,1 @@
- "He asked me:\a \"Where is John?\"" 
+ "He asked me:\a \"Where's John?\"" 

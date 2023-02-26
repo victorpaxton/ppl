@@ -1,0 +1,7 @@
+
+        fact: function integer (n: integer) {
+            x: integer = 65;
+            if (n == 0) {return 1;}
+            else {return n * fact(n - 1);}
+        }
+        

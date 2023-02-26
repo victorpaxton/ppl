@@ -1,1 +1,1 @@
-<EOF>
+a,,,b,:,bool,=,true,,,false,<EOF>

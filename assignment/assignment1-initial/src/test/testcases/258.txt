@@ -1,0 +1,5 @@
+
+        main: function void () {
+            while a < 100 { a = a + 1;}
+        } 
+        

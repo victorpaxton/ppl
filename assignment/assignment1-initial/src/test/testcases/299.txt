@@ -1,0 +1,10 @@
+
+        x: integer = 65;
+        inc: function void(inherit out n: integer, delta: integer) {
+            n = n + delta;
+        }
+        main: function void() {
+            inc(x, fact(3));
+            printInteger(x);
+        }
+        

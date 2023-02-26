@@ -1,0 +1,8 @@
+
+        x: integer = 65;
+        if (x <= 100) {
+            i = i + 1;
+        }
+        main: function void() {
+        }        
+        

@@ -1,1 +1,1 @@
- 
+a: integer = fact(2) + 2023;

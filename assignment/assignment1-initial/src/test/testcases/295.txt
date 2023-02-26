@@ -1,0 +1,9 @@
+
+        main: function void () {
+            while (i < 100) {
+                if (i == 50) break;
+                i = i - 1;
+            }
+        }
+        
+        

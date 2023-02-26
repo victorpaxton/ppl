@@ -1,0 +1,7 @@
+
+        main: function void() {
+            for (i = 0, i < 100, i+1) 
+                for (j=0,j<i,j+1)
+                    writeInt(i+j);
+        }
+        

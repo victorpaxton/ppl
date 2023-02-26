@@ -1,1 +1,1 @@
-<EOF>
+a,:,integer,=,2023,mod,2,;,<EOF>

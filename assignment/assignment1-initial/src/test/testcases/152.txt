@@ -1,1 +1,6 @@
  
+        if (a == b) then {
+            a = a + 1;
+        } else
+            b = b+1;
+        
