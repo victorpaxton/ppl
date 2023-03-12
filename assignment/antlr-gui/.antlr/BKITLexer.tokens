@@ -1,0 +1,10 @@
+T__0=1
+T__1=2
+INTTYPE=3
+FLOATTYPE=4
+ID=5
+WS=6
+';'=1
+','=2
+'int'=3
+'float'=4

@@ -4,6 +4,11 @@ from TestUtils import TestLexer
 
 class LexerSuite(unittest.TestCase):
     # Test identifier
+    # def test_0(self):
+    #     input = """a : integer = {{1},foo({1})};"""
+    #     expect = "successful"
+    #     self.assertTrue(TestLexer.test(input, expect, 100))
+
     def test_1(self):
         input = """A_0123, iDentifier_1"""
         expect = "A_0123,,,iDentifier_1,<EOF>"

@@ -159,6 +159,61 @@ class MT22Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by MT22Parser#specialcall.
+    def visitSpecialcall(self, ctx:MT22Parser.SpecialcallContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#readIntegerfun.
+    def visitReadIntegerfun(self, ctx:MT22Parser.ReadIntegerfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#printIntegerfun.
+    def visitPrintIntegerfun(self, ctx:MT22Parser.PrintIntegerfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#readFloatfun.
+    def visitReadFloatfun(self, ctx:MT22Parser.ReadFloatfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#printFloatfun.
+    def visitPrintFloatfun(self, ctx:MT22Parser.PrintFloatfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#readBooleanfun.
+    def visitReadBooleanfun(self, ctx:MT22Parser.ReadBooleanfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#printBooleanfun.
+    def visitPrintBooleanfun(self, ctx:MT22Parser.PrintBooleanfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#readStringfun.
+    def visitReadStringfun(self, ctx:MT22Parser.ReadStringfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#printStringfun.
+    def visitPrintStringfun(self, ctx:MT22Parser.PrintStringfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#superfun.
+    def visitSuperfun(self, ctx:MT22Parser.SuperfunContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MT22Parser#preventDefaultfun.
+    def visitPreventDefaultfun(self, ctx:MT22Parser.PreventDefaultfunContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by MT22Parser#exprlist.
     def visitExprlist(self, ctx:MT22Parser.ExprlistContext):
         return self.visitChildren(ctx)

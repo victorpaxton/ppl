@@ -820,3 +820,29 @@ class ParserSuite(unittest.TestCase):
         """
         expect = "Error on line 3 col 12: n"
         self.assertTrue(TestParser.test(input, expect, 300))
+
+    # def test_301(self):
+    #     input = """a : array [1] of array [2] integer = {a[3], true, 1, 1., .e3};"""
+    #     expect = "Error on line 1 col 17: array"
+    #     self.assertTrue(TestParser.test(input, expect, 301))
+
+    # def test_302(self):
+    #     input = """a : integer = {{1},foo({1})};"""
+    #     expect = "successful"
+    #     self.assertTrue(TestParser.test(input, expect, 302))
+
+    # def test_303(self):
+    #     """Test For Statement"""
+    #     input = """ main: function integer(){
+    #                     for(i = 0, i < 3, i = i+1)
+    #                         if (a==b)
+    #                             c=d;
+    #                     else d;
+    #                 }"""
+    #     expect = """successful"""
+    #     self.assertTrue(TestParser.test(input, expect, 303))
+
+    def test_304(self):
+        input = """a : function array [1] of string () inherit c { do return 1; while ({} == 1);}"""
+        expect = "successful"
+        self.assertTrue(TestParser.test(input, expect, 304))
