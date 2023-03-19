@@ -1,0 +1,18 @@
+
+printPascal: function void (n: integer)
+{
+    // Iterate through every line and
+    // print entries in it
+    line: integer;
+    for (line = 0, line < n, line+1)
+    {
+        // Every line has number of
+        // integers equal to line
+        // number
+        i: integer;
+        for (i = 0, i <= line, i+1)
+            printInteger(binomialCoeff(line, i));
+        printString("\n");
+    }
+}
+        

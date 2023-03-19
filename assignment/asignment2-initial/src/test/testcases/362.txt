@@ -1,0 +1,9 @@
+
+// Utility function to find minimum of two integers
+min: function integer(x: integer, y: integer)
+{
+    if (x < y) return x;
+    return y;
+     
+}
+        

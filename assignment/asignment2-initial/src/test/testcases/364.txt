@@ -1,0 +1,10 @@
+main: function void () {
+            if (h == 12) h = 0;
+    if (m == 60)
+     {
+      m = 0;
+      h = h+ 1;
+       if(h>12)
+        h = h-12;
+     }
+            }

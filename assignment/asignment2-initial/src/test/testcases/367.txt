@@ -1,0 +1,9 @@
+main: function void () {
+            x: integer = 5;
+ 
+    // Function call
+    if (isLucky(x))
+        printString(" is a lucky no.");
+    else
+        printString(" is not a lucky no.");
+            }

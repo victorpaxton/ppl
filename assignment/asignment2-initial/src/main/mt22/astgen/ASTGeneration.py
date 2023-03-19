@@ -30,7 +30,7 @@ class ASTGeneration(MT22Visitor):
 
     # varinit: IDENTIFIER COMMA varinit COMMA expr | IDENTIFIER COLON vartyp EQ expr ;
     # x, y: integer = 2022, 2023;
-    def visitVarinitHelper(self, ctx: MT22Parser.VarinitContext, idlist, exprlist, vartyp):
+    def visitVarinitHelper(self, ctx: MT22Parser.VarinitContext, idlist, exprlist):
         if ctx.EQ():
             idlist = idlist + [ctx.IDENTIFIER().getText()]
             exprlist = [self.visit(ctx.expr())] + exprlist
@@ -39,14 +39,11 @@ class ASTGeneration(MT22Visitor):
         else:
             idlist = idlist + [ctx.IDENTIFIER().getText()]
             exprlist = [self.visit(ctx.expr())] + exprlist
-            return self.visitVarinitHelper(ctx.varinit(), idlist, exprlist, vartyp)
+            return self.visitVarinitHelper(ctx.varinit(), idlist, exprlist)
 
     def visitVarinit(self, ctx: MT22Parser.VarinitContext):
         # result = (idlist, exprlist, vartyp)
-        result = self.visitVarinitHelper(ctx, [], [], Type())
-        idlist = result[0]
-        exprlist = result[1]
-        vartyp = result[2]
+        idlist, exprlist, vartyp = self.visitVarinitHelper(ctx, [], [])
         return list(map(lambda id, init: VarDecl(id, vartyp, init), idlist, exprlist))
 
     # shortvardecl: idlist COLON vartyp SEMI;
@@ -125,8 +122,12 @@ class ASTGeneration(MT22Visitor):
     # dimenslist: INTLIT COMMA dimenslist | INTLIT;
     def visitDimenslist(self, ctx: MT22Parser.DimenslistContext):
         if ctx.getChildCount() == 1:
-            return [IntegerLit(int(ctx.INTLIT().getText()))]
-        return [IntegerLit(int(ctx.INTLIT().getText()))] + self.visit(ctx.dimenslist())
+            return [int(ctx.INTLIT().getText())]
+        return [int(ctx.INTLIT().getText())] + self.visit(ctx.dimenslist())
+
+    # arraylit: LP exprlist RP ;
+    def visitArraylit(self, ctx: MT22Parser.ArraylitContext):
+        return ArrayLit(self.visit(ctx.exprlist()))
 
     # autotype: AUTO;
     def visitAutotype(self, ctx: MT22Parser.AutotypeContext):
@@ -143,6 +144,8 @@ class ASTGeneration(MT22Visitor):
     def visitStmtlist(self, ctx: MT22Parser.StmtlistContext):
         if ctx.getChildCount() == 0:
             return []
+        if ctx.stmt().vardecl():
+            return self.visit(ctx.stmt()) + self.visit(ctx.stmtlist())
         return [self.visit(ctx.stmt())] + self.visit(ctx.stmtlist())
 
     # stmt: blockstmt | vardecl | assignstmt | ifstmt | forstmt | whilestmt | dowhilestmt | breakstmt | continuestmt | returnstmt | callstmt  ;
@@ -167,11 +170,10 @@ class ASTGeneration(MT22Visitor):
             return IfStmt(self.visit(ctx.expr()), self.visit(ctx.stmt()[0]), self.visit(ctx.stmt()[1]))
         return IfStmt(self.visit(ctx.expr()), self.visit(ctx.stmt()[0]))
 
-    # forstmt: FOR LB assignstmt COMMA expr COMMA expr RB stmt;
+    # forstmt: FOR LB IDENTIFIER EQ expr COMMA expr COMMA expr RB stmt;
     def visitForstmt(self, ctx: MT22Parser.ForstmtContext):
-        return ForStmt(
-            self.visit(ctx.assignstmt()), self.visit(ctx.expr()[0]), self.visit(ctx.expr()[1]), self.visit(ctx.stmt())
-        )
+        init = AssignStmt(Id(ctx.IDENTIFIER().getText()), self.visit(ctx.expr()[0]))
+        return ForStmt(init, self.visit(ctx.expr()[1]), self.visit(ctx.expr()[2]), self.visit(ctx.stmt()))
 
     # whilestmt: WHILE LB expr RB stmt;
     def visitWhilestmt(self, ctx: MT22Parser.WhilestmtContext):
@@ -277,9 +279,12 @@ class ASTGeneration(MT22Visitor):
         if ctx.INTLIT():
             return IntegerLit(int(ctx.INTLIT().getText()))
         if ctx.FLOATLIT():
-            return FloatLit(float(ctx.FLOATLIT().getText()))
+            temp = ctx.FLOATLIT().getText()
+            if (temp[0] == ".") and (temp[1] == "e" or temp[1] == "E"):
+                return FloatLit(0.0)
+            return FloatLit(float(temp))
         if ctx.BOOLLIT():
-            return BooleanLit(True if ctx.BOOLLIT().getText() == "True" else False)
+            return BooleanLit(True if ctx.BOOLLIT().getText() == "true" else False)
         if ctx.STRINGLIT():
             return StringLit(ctx.STRINGLIT().getText())
         if ctx.IDENTIFIER():

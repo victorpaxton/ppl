@@ -1,3 +1,3 @@
 Program([
-	FuncDecl(main, VoidType, [], None, BlockStmt([AssignStmt(Id(a), IntegerLit(2023))]))
+	VarDecl(x, AutoType, IntegerLit(2023))
 ])

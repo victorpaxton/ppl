@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(isLucky, BooleanType, [Param(n, IntegerType)], None, BlockStmt([VarDecl(counter, IntegerType, IntegerLit(2)), IfStmt(BinExpr(>, Id(counter), Id(n)), ReturnStmt(IntegerLit(1))), IfStmt(BinExpr(==, BinExpr(%, Id(n), Id(counter)), IntegerLit(0)), ReturnStmt(IntegerLit(0))), VarDecl(next_position, IntegerType, BinExpr(-, Id(n), BinExpr(/, Id(n), Id(counter)))), AssignStmt(Id(counter), BinExpr(+, Id(counter), IntegerLit(1))), ReturnStmt(FuncCall(isLucky, [Id(next_position)]))]))
+])

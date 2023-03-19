@@ -1,0 +1,18 @@
+
+// C function to find maximum in arr[] of size n
+largest: function integer (arr: array [4] of integer, n: integer)
+{
+    i: integer;
+    
+    // Initialize maximum element
+    max: integer = arr[0];
+ 
+    // Traverse array elements from second and
+    // compare every element with current max 
+    for (i = 1, i < n, i+1)
+        if (arr[i] > max)
+            max = arr[i];
+ 
+    return max;
+}
+        

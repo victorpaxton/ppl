@@ -1,0 +1,7 @@
+main: function void() {
+            i: integer;
+            for (i = 2023, i >= 0, i - 1) {
+                printInteger(i);
+                if (i == 1000) continue;
+                }
+            }

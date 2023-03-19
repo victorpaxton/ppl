@@ -1,0 +1,6 @@
+
+nPr: function integer (n: integer, r: integer)
+{
+    return fact(n)/fact(n-r);
+}
+        

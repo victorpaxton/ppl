@@ -1,0 +1,6 @@
+main: function void () {
+            hour_angle: float = 0.5 * (h * 60 + m);
+    minute_angle: float = 6 * m;
+    angle: float = abs(hour_angle - minute_angle);
+    angle = min(360 - angle, angle);
+            }

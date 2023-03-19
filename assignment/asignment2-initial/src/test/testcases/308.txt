@@ -1,0 +1,1 @@
+a: auto = "abc"; b: string = "abc"; 

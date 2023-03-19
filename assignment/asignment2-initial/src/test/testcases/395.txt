@@ -1,0 +1,7 @@
+i: integer = 2023;
+        main: function void () {
+            do {
+                printInteger(i);
+                i = i - 1;
+            } while (i > 0);
+            }

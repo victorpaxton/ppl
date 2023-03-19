@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(fib, IntegerType, [Param(n, IntegerType)], None, BlockStmt([IfStmt(BinExpr(<=, Id(n), IntegerLit(1)), ReturnStmt(Id(n))), ReturnStmt(BinExpr(+, FuncCall(fib, [BinExpr(-, Id(n), IntegerLit(1))]), FuncCall(fib, [BinExpr(-, Id(n), IntegerLit(2))])))]))
+])

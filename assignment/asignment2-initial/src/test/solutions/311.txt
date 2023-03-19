@@ -1,0 +1,4 @@
+Program([
+	VarDecl(x, IntegerType, ArrayCell(arr, [IntegerLit(0)]))
+	VarDecl(y, IntegerType, ArrayCell(a, [IntegerLit(2), IntegerLit(3)]))
+])

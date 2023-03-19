@@ -1,3 +1,1 @@
-main: function void () {
-            a = 2023;
-            }
+x: auto = 2023;

@@ -7,7 +7,7 @@ class AST(ABC):
         return self.__dict__ == other.__dict__
 
     def accept(self, v, param):
-        method_name = "visit{}".format(self.__class__.__name__)
+        method_name = 'visit{}'.format(self.__class__.__name__)
         visit = getattr(v, method_name)
         return visit(self, param)
 
@@ -26,7 +26,6 @@ class Type(AST):
 
 class Decl(AST):
     pass
-
 
 # Types
 
@@ -61,7 +60,7 @@ class ArrayType(Type):
         self.typ = typ
 
     def __str__(self):
-        return "ArrayType([{}], {})".format(", ".join([dimen for dimen in self.dimensions]), str(self.typ))
+        return "ArrayType([{}], {})".format(", ".join([str(dimen) for dimen in self.dimensions]), str(self.typ))
 
 
 class AutoType(Type):
@@ -75,7 +74,6 @@ class VoidType(Type):
 
 
 # Expressions
-
 
 class LHS(Expr):
     pass
@@ -93,7 +91,7 @@ class BinExpr(Expr):
 
 class UnExpr(Expr):
     def __init__(self, op: str, val: Expr):
-        self.op = str
+        self.op = op
         self.val = val
 
     def __str__(self):
@@ -137,6 +135,9 @@ class StringLit(Expr):
     def __init__(self, val: str):
         self.val = val
 
+    def __str__(self):
+        return "StringLit({})".format(self.val)
+
 
 class BooleanLit(Expr):
     def __init__(self, val: bool):
@@ -164,7 +165,6 @@ class FuncCall(Expr):
 
 
 # Statements
-
 
 class AssignStmt(Stmt):
     def __init__(self, lhs: LHS, rhs: Expr):
@@ -270,9 +270,7 @@ class ParamDecl(Decl):
         self.inherit = inherit
 
     def __str__(self):
-        return "{}{}Param({}, {})".format(
-            "Inherit" if self.inherit else "", "Out" if self.out else "", self.name, str(self.typ)
-        )
+        return "{}{}Param({}, {})".format("Inherit" if self.inherit else "", "Out" if self.out else "", self.name, str(self.typ))
 
 
 class FuncDecl(Decl):
@@ -284,14 +282,7 @@ class FuncDecl(Decl):
         self.body = body
 
     def __str__(self):
-        return "FuncDecl({}, {}, [{}], {}, {})".format(
-            self.name,
-            str(self.return_type),
-            ", ".join([str(param) for param in self.params]),
-            self.inherit if self.inherit else "None",
-            str(self.body),
-        )
-
+        return "FuncDecl({}, {}, [{}], {}, {})".format(self.name, str(self.return_type), ", ".join([str(param) for param in self.params]), self.inherit if self.inherit else "None", str(self.body))
 
 # Program
 

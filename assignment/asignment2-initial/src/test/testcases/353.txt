@@ -1,0 +1,19 @@
+
+    /* prints element and NGE pair for all elements of
+    arr[] of size n */
+    printNGE: function void (arr: array [4] of integer, n: integer)
+    {
+        next, i, j: integer;
+        for (i = 0, i < n, i+1) {
+            next = -1;
+            for (j = i + 1, j < n, j+1) {
+                if (arr[i] < arr[j]) {
+                    next = arr[j];
+                    break;
+                }
+            }
+            printInteger(arr[i]);
+            printInteger(next);
+        }
+    }    
+        

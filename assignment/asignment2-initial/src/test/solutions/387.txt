@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(stage, AutoType, [], None, BlockStmt([IfStmt(UnExpr(!, FuncCall(isDead, [])), BlockStmt([AssignStmt(Id(stage), BinExpr(+, Id(stage), IntegerLit(1)))])), ReturnStmt(BooleanLit(False))]))
+])

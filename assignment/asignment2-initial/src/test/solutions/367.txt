@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([VarDecl(x, IntegerType, IntegerLit(5)), IfStmt(FuncCall(isLucky, [Id(x)]), CallStmt(printString, StringLit( is a lucky no.)), CallStmt(printString, StringLit( is not a lucky no.)))]))
+])

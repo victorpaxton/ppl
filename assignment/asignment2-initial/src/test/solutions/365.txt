@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([VarDecl(hour_angle, FloatType, BinExpr(*, FloatLit(0.5), BinExpr(+, BinExpr(*, Id(h), IntegerLit(60)), Id(m)))), VarDecl(minute_angle, FloatType, BinExpr(*, IntegerLit(6), Id(m))), VarDecl(angle, FloatType, FuncCall(abs, [BinExpr(-, Id(hour_angle), Id(minute_angle))])), AssignStmt(Id(angle), FuncCall(min, [BinExpr(-, IntegerLit(360), Id(angle)), Id(angle)]))]))
+])

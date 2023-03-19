@@ -1,0 +1,8 @@
+
+		 stage: function auto () {
+			if(!isDead()){
+				stage = stage + 1;
+			}
+			return false;
+		 }
+		

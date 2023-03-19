@@ -1,0 +1,6 @@
+Program([
+	VarDecl(x, AutoType, BinExpr(+, IntegerLit(45), IntegerLit(2)))
+	VarDecl(y, AutoType, BinExpr(::, StringLit(abc), StringLit(abc)))
+	VarDecl(z, AutoType, UnExpr(!, BooleanLit(True)))
+	VarDecl(t, AutoType, BinExpr(+, ArrayCell(a, [IntegerLit(0)]), IntegerLit(5)))
+])

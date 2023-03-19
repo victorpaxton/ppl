@@ -53,27 +53,14 @@ assignstmt: lhs EQ expr SEMI;
 lhs: IDENTIFIER | arrayele;
 ifstmt: IF LB expr RB stmt (ELSE stmt | );
 // elsestmt: ELSE stmt | ;
-// forstmt: FOR LB IDENTIFIER EQ expr COMMA expr COMMA expr RB stmt;
-forstmt: FOR LB assignstmt COMMA expr COMMA expr RB stmt;
+forstmt: FOR LB IDENTIFIER EQ expr COMMA expr COMMA expr RB stmt;
+// forstmt: FOR LB assignstmt COMMA expr COMMA expr RB stmt;
 whilestmt: WHILE LB expr RB stmt;
 dowhilestmt: DO blockstmt WHILE LB expr RB SEMI;
 breakstmt: BREAK SEMI ;
 continuestmt: CONTINUE SEMI ;
 returnstmt: RETURN (expr | ) SEMI;
 callstmt: IDENTIFIER LB exprlist RB SEMI;
-// specialcall: readIntegerfun | printIntegerfun | readFloatfun | printFloatfun | readBooleanfun | printBooleanfun | readStringfun | printStringfun | superfun | preventDefaultfun ;
-
-// readIntegerfun: 'readInteger' LB RB SEMI;
-// printIntegerfun: 'printInteger' LB expr RB SEMI;
-// readFloatfun: 'readFloat' LB RB SEMI;
-// printFloatfun: 'printFloat' LB expr RB SEMI;
-// readBooleanfun: 'readBoolean' LB RB SEMI;
-// printBooleanfun: 'printBoolean' LB expr RB SEMI;
-// readStringfun: 'readString' LB RB SEMI;
-// printStringfun: 'printString' LB expr RB SEMI;
-// superfun: 'super' LB exprlist RB SEMI;
-// preventDefaultfun: 'preventDefault' LB RB SEMI;
-
 
 /*********** Expressions list *******************/
 exprlist: exprprime | ;
@@ -159,7 +146,7 @@ EQ: '=';
 // INTLIT: '0' | [1-9] [0-9]* ([_] [0-9]+)* {self.text = self.text.replace("_", "")};
 INTLIT: '0' | NONZERO_DIGIT DIGIT* (UNDERSCORE DIGIT+)*  {self.text = self.text.replace("_", "")} ;
 
-FLOATLIT: (INTLIT DECPART | INTLIT DECPART? EXPPART)  {self.text = self.text.replace("_", "")} ;
+FLOATLIT: (INTLIT DECPART | INTLIT DECPART? EXPPART | DECPART EXPPART)  {self.text = self.text.replace("_", "")} ;
 
 fragment DECPART: '.' DIGIT*;
 fragment EXPPART: [eE] [-+]? DIGIT+;

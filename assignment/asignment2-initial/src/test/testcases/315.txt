@@ -1,0 +1,1 @@
+x, y, z, t: auto = 45 + 2, "abc"::"abc", !true, a[0] + 5; 

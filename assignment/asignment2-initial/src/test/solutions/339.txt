@@ -1,0 +1,4 @@
+Program([
+	FuncDecl(concatString, StringType, [Param(s1, StringType), Param(s2, StringType)], None, BlockStmt([ReturnStmt(BinExpr(::, Id(s1), Id(s2)))]))
+	FuncDecl(main, VoidType, [], None, BlockStmt([CallStmt(printString, FuncCall(concatString, [StringLit(abc), StringLit(def)]))]))
+])

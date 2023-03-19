@@ -1,0 +1,10 @@
+
+check: function boolean (n: integer){
+    sum, i: integer = 0, 1;//khai bao biem sum
+    for(i=1,i<=n/2,i+1){
+        if(n%i==0) sum = sum+i;
+    }
+    if(sum==n) return true; // tra ve true
+    return false;
+}
+        

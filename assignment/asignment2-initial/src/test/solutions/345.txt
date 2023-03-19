@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([VarDecl(n, IntegerType), CallStmt(printString, StringLit(Nhap n: )), AssignStmt(Id(n), FuncCall(readInteger, [])), IfStmt(FuncCall(check, [Id(n)]), CallStmt(printString, StringLit(n la so hoan hao)), CallStmt(printString, StringLit(n khong phai la so hoan hao.), Id(n))), ReturnStmt()]))
+])

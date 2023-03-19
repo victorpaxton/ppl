@@ -1,0 +1,1 @@
+x: integer = -3; y: boolean = (x > 1) && (x < 5);
