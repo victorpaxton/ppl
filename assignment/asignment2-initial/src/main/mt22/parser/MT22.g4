@@ -53,7 +53,7 @@ assignstmt: lhs EQ expr SEMI;
 lhs: IDENTIFIER | arrayele;
 ifstmt: IF LB expr RB stmt (ELSE stmt | );
 // elsestmt: ELSE stmt | ;
-forstmt: FOR LB IDENTIFIER EQ expr COMMA expr COMMA expr RB stmt;
+forstmt: FOR LB lhs EQ expr COMMA expr COMMA expr RB stmt;
 // forstmt: FOR LB assignstmt COMMA expr COMMA expr RB stmt;
 whilestmt: WHILE LB expr RB stmt;
 dowhilestmt: DO blockstmt WHILE LB expr RB SEMI;

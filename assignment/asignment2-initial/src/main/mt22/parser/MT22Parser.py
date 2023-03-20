@@ -113,7 +113,7 @@ def serializedATN():
         buf.write("\u00de\7\n\2\2\u00de\u00e1\5 \21\2\u00df\u00e1\3\2\2\2")
         buf.write("\u00e0\u00dd\3\2\2\2\u00e0\u00df\3\2\2\2\u00e1)\3\2\2")
         buf.write("\2\u00e2\u00e3\7\r\2\2\u00e3\u00e4\7*\2\2\u00e4\u00e5")
-        buf.write("\7:\2\2\u00e5\u00e6\7\64\2\2\u00e6\u00e7\5<\37\2\u00e7")
+        buf.write("\5&\24\2\u00e5\u00e6\7\64\2\2\u00e6\u00e7\5<\37\2\u00e7")
         buf.write("\u00e8\7\61\2\2\u00e8\u00e9\5<\37\2\u00e9\u00ea\7\61\2")
         buf.write("\2\u00ea\u00eb\5<\37\2\u00eb\u00ec\7+\2\2\u00ec\u00ed")
         buf.write("\5 \21\2\u00ed+\3\2\2\2\u00ee\u00ef\7\24\2\2\u00ef\u00f0")
@@ -1679,8 +1679,9 @@ class MT22Parser ( Parser ):
         def LB(self):
             return self.getToken(MT22Parser.LB, 0)
 
-        def IDENTIFIER(self):
-            return self.getToken(MT22Parser.IDENTIFIER, 0)
+        def lhs(self):
+            return self.getTypedRuleContext(MT22Parser.LhsContext,0)
+
 
         def EQ(self):
             return self.getToken(MT22Parser.EQ, 0)
@@ -1728,7 +1729,7 @@ class MT22Parser ( Parser ):
             self.state = 225
             self.match(MT22Parser.LB)
             self.state = 226
-            self.match(MT22Parser.IDENTIFIER)
+            self.lhs()
             self.state = 227
             self.match(MT22Parser.EQ)
             self.state = 228

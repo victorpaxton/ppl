@@ -170,9 +170,9 @@ class ASTGeneration(MT22Visitor):
             return IfStmt(self.visit(ctx.expr()), self.visit(ctx.stmt()[0]), self.visit(ctx.stmt()[1]))
         return IfStmt(self.visit(ctx.expr()), self.visit(ctx.stmt()[0]))
 
-    # forstmt: FOR LB IDENTIFIER EQ expr COMMA expr COMMA expr RB stmt;
+    # forstmt: FOR LB lhs EQ expr COMMA expr COMMA expr RB stmt;
     def visitForstmt(self, ctx: MT22Parser.ForstmtContext):
-        init = AssignStmt(Id(ctx.IDENTIFIER().getText()), self.visit(ctx.expr()[0]))
+        init = AssignStmt(self.visit(ctx.lhs()), self.visit(ctx.expr()[0]))
         return ForStmt(init, self.visit(ctx.expr()[1]), self.visit(ctx.expr()[2]), self.visit(ctx.stmt()))
 
     # whilestmt: WHILE LB expr RB stmt;
