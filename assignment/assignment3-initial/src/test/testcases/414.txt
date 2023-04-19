@@ -1,0 +1,9 @@
+
+        a: auto = 50;
+        x: auto = a < 10;
+        y: boolean;
+        main: function void () {
+
+        }
+        foo: function integer () inherit goo {}
+        

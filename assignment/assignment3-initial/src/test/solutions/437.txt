@@ -1,0 +1,1 @@
+Type mismatch in statement: CallStmt(printInteger, BinExpr(+, Id(i), FloatLit(5.5)))

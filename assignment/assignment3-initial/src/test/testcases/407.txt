@@ -1,0 +1,6 @@
+
+        x: float = 1;
+        y: float = x + 1;
+        z: integer = 3.8;
+        main: function void () {}
+        

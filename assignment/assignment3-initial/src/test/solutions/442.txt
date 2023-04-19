@@ -1,0 +1,1 @@
+Type mismatch in statement: ForStmt(AssignStmt(Id(i), IntegerLit(6)), BinExpr(<, Id(i), IntegerLit(10)), BinExpr(+, Id(i), FloatLit(2.0)), BlockStmt([CallStmt(readInteger, ), CallStmt(printFloat, Id(i))]))

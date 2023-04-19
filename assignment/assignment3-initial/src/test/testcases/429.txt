@@ -1,0 +1,10 @@
+
+        x: integer = 1;
+        a: integer;
+        foo: function float () {
+            return 2023;
+        }
+        main: function void () {
+            a = foo(4);
+        }
+        

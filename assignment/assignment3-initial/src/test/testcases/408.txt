@@ -1,0 +1,7 @@
+
+        x: auto = "hello";
+        y: auto = " world";
+        z: string = x::y;
+        t: auto = x + y;
+        main: function void () {}
+        

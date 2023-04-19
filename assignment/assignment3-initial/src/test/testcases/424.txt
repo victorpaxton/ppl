@@ -1,0 +1,13 @@
+
+            a: integer = 3;
+            main: function void () {
+
+            }
+            hoo: function void () {}
+            foo: function integer (a: integer, c: integer) inherit goo {
+                hoo();
+                a = a + 1;
+            }
+            goo: function integer (d: string)  {}
+    
+        

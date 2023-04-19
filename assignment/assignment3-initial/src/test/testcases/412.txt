@@ -1,0 +1,4 @@
+
+        x: integer = 5/7;
+        main: function void () {}
+        

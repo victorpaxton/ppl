@@ -1,0 +1,7 @@
+
+        main: function void () {
+
+        }
+        foo: function integer (b: integer, c: integer) inherit goo {}
+        goo: function integer (inherit a: integer, a: integer) {}
+        

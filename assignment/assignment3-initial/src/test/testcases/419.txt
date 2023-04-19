@@ -1,0 +1,7 @@
+
+        a: integer = 3;
+        foo: function integer (b: integer) inherit a {
+            super("abc");
+        }
+        a: function string (inherit c: string) {}
+        

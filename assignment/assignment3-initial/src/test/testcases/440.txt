@@ -1,0 +1,7 @@
+main: function void () {
+        i: string;
+        for (i = "abc", i < 10, i + 1) {
+            readInteger();
+            printFloat(i);
+        }
+    }

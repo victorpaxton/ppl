@@ -1,0 +1,7 @@
+x: auto = true;
+        y: boolean = !x;
+        x: integer;
+        main: function void () {
+
+        }
+        

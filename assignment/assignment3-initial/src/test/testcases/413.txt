@@ -1,0 +1,5 @@
+
+        a: auto = "hello";
+        x: auto = a < 10;
+        y: boolean = !x;
+        

@@ -1,0 +1,11 @@
+
+        a: integer = 3;
+        main: function void () {
+
+        }
+        foo: function integer (c: integer) inherit goo {
+            super(6);
+            a: integer;
+        }
+        goo: function integer (inherit a: integer) {}
+        

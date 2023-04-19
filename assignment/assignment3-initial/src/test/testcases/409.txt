@@ -1,0 +1,5 @@
+
+        x: auto = a < 10;
+        y: boolean = !x;
+        main: function void () {}
+        

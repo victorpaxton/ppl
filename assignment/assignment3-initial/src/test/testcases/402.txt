@@ -1,0 +1,10 @@
+x: integer;
+inc: function integer (i: integer) {
+    return i + 1;
+}
+inc: function integer (i: integer) {
+    return i - 1;
+}
+main: function void () {
+}
+        
