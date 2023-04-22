@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(binomialCoeff, IntegerType, [Param(n, IntegerType), Param(k, IntegerType)], None, BlockStmt([VarDecl(res, IntegerType, IntegerLit(1)), VarDecl(i, IntegerType), IfStmt(BinExpr(>, Id(k), BinExpr(-, Id(n), Id(k))), AssignStmt(Id(k), BinExpr(-, Id(n), Id(k)))), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), Id(k)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([AssignStmt(Id(res), BinExpr(*, Id(res), BinExpr(-, Id(n), Id(i)))), AssignStmt(Id(res), BinExpr(/, Id(res), BinExpr(+, Id(i), IntegerLit(1))))])), ReturnStmt(Id(res))]))
+])

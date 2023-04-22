@@ -1,0 +1,16 @@
+
+binomialCoeff: function integer(n: integer, k: integer)
+{
+    res: integer = 1;
+    i: integer;
+    if (k > n - k)
+    k = n - k;
+    for (i = 0, i < k, i+1)
+    {
+        res =res * (n - i);
+        res =res/ (i + 1);
+    }
+     
+    return res;
+}        
+        

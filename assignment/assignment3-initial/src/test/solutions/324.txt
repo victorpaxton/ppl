@@ -1,0 +1,4 @@
+Program([
+	VarDecl(x, IntegerType, IntegerLit(2))
+	FuncDecl(main, VoidType, [], None, BlockStmt([IfStmt(BinExpr(>, Id(x), IntegerLit(0)), BlockStmt([IfStmt(BinExpr(==, BinExpr(%, Id(x), IntegerLit(2)), IntegerLit(0)), BlockStmt([CallStmt(printString, StringLit(Even positive number))]), CallStmt(printString, StringLit(Odd positive number)))]), CallStmt(printString, StringLit(Negative number)))]))
+])

@@ -1,0 +1,9 @@
+
+sum: function float (n: integer)
+{
+    i, s: float = 0.0, 0.0;
+    for (i = 1, i <= n, i+1)
+    s = s + 1/i;
+    return s;
+}
+        

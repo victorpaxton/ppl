@@ -1,0 +1,9 @@
+main: function void () {
+            if (i > 0) {
+                for (j = i, j >= 0, j - 1) {
+                    printInteger(j);
+                }
+            } else {
+                return;
+            }
+            }

@@ -1,0 +1,4 @@
+Program([
+	FuncDecl(check, BooleanType, [Param(n, IntegerType)], None, BlockStmt([VarDecl(sum, IntegerType, IntegerLit(0)), VarDecl(i, IntegerType, IntegerLit(1)), ForStmt(AssignStmt(Id(i), IntegerLit(1)), BinExpr(<=, Id(i), BinExpr(/, Id(n), IntegerLit(2))), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([IfStmt(BinExpr(==, BinExpr(%, Id(n), Id(i)), IntegerLit(0)), AssignStmt(Id(sum), BinExpr(+, Id(sum), Id(i))))])), IfStmt(BinExpr(==, Id(sum), Id(n)), ReturnStmt(BooleanLit(True))), ReturnStmt(BooleanLit(False))]))
+	FuncDecl(main, VoidType, [], None, BlockStmt([VarDecl(n, IntegerType), CallStmt(printString, StringLit(Nhap n: )), AssignStmt(Id(n), FuncCall(readInteger, [])), IfStmt(FuncCall(check, [Id(n)]), CallStmt(printString, StringLit(n la so hoan hao)), CallStmt(printString, StringLit(n khong phai la so hoan hao.), Id(n))), ReturnStmt()]))
+])

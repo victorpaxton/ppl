@@ -1,0 +1,10 @@
+main: function void () {
+            while (true) {
+                while (true) {
+                    while (true) {
+                        return;
+                    }
+                }
+            }
+            
+            }

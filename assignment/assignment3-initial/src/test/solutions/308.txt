@@ -1,0 +1,4 @@
+Program([
+	VarDecl(a, AutoType, StringLit(abc))
+	VarDecl(b, StringType, StringLit(abc))
+])

@@ -1,0 +1,9 @@
+  
+        inc: function integer (num: integer, delta: integer) {
+                    return num + delta;
+                }
+        main: function void () {
+            result: float = inc(2022, 1);
+            printInteger(result);
+        }       
+        

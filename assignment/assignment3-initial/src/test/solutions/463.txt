@@ -1,0 +1,1 @@
+Type mismatch in Variable Declaration: VarDecl(next_position, IntegerType, BinExpr(-, Id(n), BinExpr(/, Id(n), Id(counter))))

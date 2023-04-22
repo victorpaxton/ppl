@@ -1,0 +1,10 @@
+
+        arr: array [2, 3, 2] of integer = {{{4, 8},{2, 4},{1, 6}}, {{3, 6},{5, 4},{9, 3}}};
+        main: function void () {
+            temp: integer = arr[1, 2, 1];
+            temp1: array [2] of integer = arr[1, 2];
+            temp2: array [3, 2] of integer = arr[1];
+            temp4: auto = arr[];
+            temp3: auto = arr[1, 2, 3, 4];
+        }
+        

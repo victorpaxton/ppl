@@ -1,0 +1,5 @@
+main: function void () {
+            // validate the input
+    if ((h <0) || (m < 0) || (h >12) || (m > 60)) printString("Wrong input");
+            
+            }

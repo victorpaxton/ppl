@@ -1,0 +1,19 @@
+
+/* For a given array arr[], 
+   returns the maximum j - i such
+   that arr[j] > arr[i] */
+maxIndexDiff: function integer(arr: array [4] of integer, n: integer)
+{
+    maxDiff:integer = -1;
+    i, j: integer;
+  
+    for (i = 0, i < n, i+1) {
+        for (j = n - 1, j > i, j-1) {
+            if ((arr[j] > arr[i]) && (maxDiff < (j - i)))
+                maxDiff = j - i;
+        }
+    }
+  
+    return maxDiff;
+}    
+        

@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(printPascal, VoidType, [Param(n, IntegerType)], None, BlockStmt([VarDecl(line, IntegerType), ForStmt(AssignStmt(Id(line), IntegerLit(0)), BinExpr(<, Id(line), Id(n)), BinExpr(+, Id(line), IntegerLit(1)), BlockStmt([VarDecl(i, IntegerType), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<=, Id(i), Id(line)), BinExpr(+, Id(i), IntegerLit(1)), CallStmt(printInteger, FuncCall(binomialCoeff, [Id(line), Id(i)]))), CallStmt(printString, StringLit(\n))]))]))
+])

@@ -1,0 +1,15 @@
+
+        a: function auto (b: integer)  {
+            return b;
+        }
+        foo: function auto (c: auto) {
+            return c;
+        }
+        goo: function auto (p: auto) {
+            return p;
+        }
+        main: function void () {
+            res: integer = foo(a(2023));
+            res2: float = goo("abc") + 3.5;
+        }
+        

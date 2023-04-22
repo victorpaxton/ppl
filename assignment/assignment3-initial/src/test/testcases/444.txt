@@ -1,0 +1,7 @@
+x: boolean = true && false && 5 == 7;
+        main: function void () {
+            if (x) {
+            }
+            else if (x > 0)
+                printString("Negative number") ; 
+        }

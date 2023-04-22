@@ -1,0 +1,8 @@
+main: function void () {
+            x: integer = 5;
+            i: integer;
+             for(i = 0, i < n, i+1)
+    {
+        printInteger(fibonacci_numbers(i));
+    }
+}

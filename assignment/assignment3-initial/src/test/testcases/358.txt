@@ -1,0 +1,19 @@
+
+// function to find the maximum element
+findMaximum: function integer (arr: array [4] of integer, low: integer, high: integer)
+{
+    max: integer = arr[low];
+    i: integer;
+    for (i = low+1,i <= high, i+1)
+    {
+        if (arr[i] > max)
+            max = arr[i];
+    // break when once an element is smaller than
+    // the max then it will go on decreasing
+    // and no need to check after that
+        else
+            break;
+    }
+    return max;
+}
+        

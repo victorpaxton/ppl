@@ -1,0 +1,4 @@
+Program([
+	VarDecl(i, IntegerType, IntegerLit(1))
+	FuncDecl(main, VoidType, [], None, BlockStmt([WhileStmt(BinExpr(<, Id(i), IntegerLit(10)), BlockStmt([CallStmt(printInteger, Id(i)), AssignStmt(Id(i), BinExpr(+, Id(i), IntegerLit(1))), IfStmt(BinExpr(==, Id(i), IntegerLit(5)), BreakStmt())]))]))
+])

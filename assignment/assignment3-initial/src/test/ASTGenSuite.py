@@ -1467,7 +1467,7 @@ main: function void () {
         self.assertTrue(TestAST.test(input, expect, 398))
 
     def test_399(self):
-        input = """arr: array [2,3] of integer = {1, 2, 3, 4, 5, 6};
+        input = """arr: array [2,3,2] of integer = {{{4, 8},{2, 4},{1, 6}}, {{3, 6},{5, 4},{9, 3}}};
         i: integer;
         main: function void () {
             for (i = 0, i < 2, i+1) {
@@ -1478,7 +1478,7 @@ main: function void () {
         
         """
         expect = """Program([
-	VarDecl(arr, ArrayType([2, 3], IntegerType), ArrayLit([IntegerLit(1), IntegerLit(2), IntegerLit(3), IntegerLit(4), IntegerLit(5), IntegerLit(6)]))
+	VarDecl(arr, ArrayType([2, 3, 2], IntegerType), ArrayLit([ArrayLit([ArrayLit([IntegerLit(4), IntegerLit(8)]), ArrayLit([IntegerLit(2), IntegerLit(4)]), ArrayLit([IntegerLit(1), IntegerLit(6)])]), ArrayLit([ArrayLit([IntegerLit(3), IntegerLit(6)]), ArrayLit([IntegerLit(5), IntegerLit(4)]), ArrayLit([IntegerLit(9), IntegerLit(3)])])]))
 	VarDecl(i, IntegerType)
 	FuncDecl(main, VoidType, [], None, BlockStmt([ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), IntegerLit(2)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([ForStmt(AssignStmt(Id(j), IntegerLit(0)), BinExpr(<, Id(j), IntegerLit(3)), BinExpr(+, Id(j), IntegerLit(1)), CallStmt(printInteger, ArrayCell(arr, [Id(i), Id(j)])))]))]))
 ])"""

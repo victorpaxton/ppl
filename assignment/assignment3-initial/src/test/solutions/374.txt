@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(fibonacci_numbers, IntegerType, [Param(n, IntegerType)], None, BlockStmt([IfStmt(BinExpr(==, Id(n), IntegerLit(0)), BlockStmt([ReturnStmt(IntegerLit(0))]), IfStmt(BinExpr(==, Id(n), IntegerLit(1)), BlockStmt([ReturnStmt(IntegerLit(1))]), BlockStmt([ReturnStmt(BinExpr(+, FuncCall(fibonacci_numbers, [BinExpr(-, Id(n), IntegerLit(2))]), FuncCall(fibonacci_numbers, [BinExpr(-, Id(n), IntegerLit(1))])))])))]))
+])

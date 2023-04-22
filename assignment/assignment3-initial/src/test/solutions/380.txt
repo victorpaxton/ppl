@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(isPalindrome, IntegerType, [Param(num, IntegerType)], None, BlockStmt([VarDecl(n, IntegerType, IntegerLit(0)), VarDecl(k, IntegerType, IntegerLit(0)), VarDecl(rev, IntegerType, IntegerLit(0)), AssignStmt(Id(n), Id(num)), WhileStmt(BinExpr(!=, Id(num), IntegerLit(0)), BlockStmt([AssignStmt(Id(k), BinExpr(%, Id(num), IntegerLit(10))), AssignStmt(Id(rev), BinExpr(+, BinExpr(*, Id(rev), IntegerLit(10)), Id(k))), AssignStmt(Id(num), BinExpr(/, Id(num), IntegerLit(10)))])), IfStmt(BinExpr(==, Id(n), Id(rev)), BlockStmt([ReturnStmt(IntegerLit(1))]), BlockStmt([ReturnStmt(IntegerLit(0))]))]))
+])

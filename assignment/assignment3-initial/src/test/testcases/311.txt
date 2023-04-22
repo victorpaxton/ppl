@@ -1,0 +1,1 @@
+x: integer = arr[0]; y: integer = a[2,3];

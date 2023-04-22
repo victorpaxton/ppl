@@ -1,0 +1,10 @@
+arr: array [2,3,2] of integer = {{{4, 8},{2, 4},{1, 6}}, {{3, 6},{5, 4},{9, 3}}};
+        i: integer;
+        main: function void () {
+            for (i = 0, i < 2, i+1) {
+                for (j = 0, j < 3, j+1) 
+                    printInteger(arr[i, j]);
+            }
+        }
+        
+        

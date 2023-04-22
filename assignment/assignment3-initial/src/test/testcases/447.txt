@@ -1,0 +1,10 @@
+
+        main: function void () {
+            while (i < 10) {
+                i: integer = 1;
+                printInteger(i);
+                i = i + 1;
+                if (i == 5) break;
+                printString(5);
+                }}  
+        

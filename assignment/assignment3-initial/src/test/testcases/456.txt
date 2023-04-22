@@ -1,0 +1,9 @@
+
+        // This is a comment
+        main: function void () {
+            myPI: float = 3.14;
+            r, s: integer;
+            r = 2;
+            s = r * r * myPI;
+        }
+        

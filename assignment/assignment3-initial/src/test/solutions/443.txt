@@ -1,0 +1,1 @@
+Type mismatch in statement: IfStmt(BinExpr(+, Id(x), IntegerLit(0)), CallStmt(printString, StringLit(Negative number)))

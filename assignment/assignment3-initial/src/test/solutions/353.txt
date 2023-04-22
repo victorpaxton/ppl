@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(printNGE, VoidType, [Param(arr, ArrayType([4], IntegerType)), Param(n, IntegerType)], None, BlockStmt([VarDecl(next, IntegerType), VarDecl(i, IntegerType), VarDecl(j, IntegerType), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), Id(n)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([AssignStmt(Id(next), UnExpr(-, IntegerLit(1))), ForStmt(AssignStmt(Id(j), BinExpr(+, Id(i), IntegerLit(1))), BinExpr(<, Id(j), Id(n)), BinExpr(+, Id(j), IntegerLit(1)), BlockStmt([IfStmt(BinExpr(<, ArrayCell(arr, [Id(i)]), ArrayCell(arr, [Id(j)])), BlockStmt([AssignStmt(Id(next), ArrayCell(arr, [Id(j)])), BreakStmt()]))])), CallStmt(printInteger, ArrayCell(arr, [Id(i)])), CallStmt(printInteger, Id(next))]))]))
+])

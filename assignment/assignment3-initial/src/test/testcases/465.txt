@@ -1,0 +1,12 @@
+
+        x: integer = 2023;
+        main: function void () {
+            printInteger(inc(2023, 2024));
+            inc: integer = 2023;
+            return inc;
+        }
+        inc: function integer (value: integer, delta: integer) {
+            res: integer = value + delta;
+            return res;
+        }
+        

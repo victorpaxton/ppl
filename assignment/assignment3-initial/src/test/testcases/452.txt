@@ -1,0 +1,10 @@
+
+        inc: function integer (num: integer, delta: integer) {
+                    return num + delta;
+                }
+        main: function void () {
+            inc: integer = 5;
+            result: integer = inc(2023, 1);
+            printInteger(result);
+        }   
+        

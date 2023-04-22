@@ -1,0 +1,1 @@
+inc: function integer (n: integer , delta: integer) {} x: integer = inc(5, 3);

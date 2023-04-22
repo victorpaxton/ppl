@@ -1,0 +1,1 @@
+inc: function integer (n: integer , delta: integer) inherit fact {}

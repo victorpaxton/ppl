@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(maxIndexDiff, IntegerType, [Param(arr, ArrayType([4], IntegerType)), Param(n, IntegerType)], None, BlockStmt([VarDecl(maxDiff, IntegerType, UnExpr(-, IntegerLit(1))), VarDecl(i, IntegerType), VarDecl(j, IntegerType), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), Id(n)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([ForStmt(AssignStmt(Id(j), BinExpr(-, Id(n), IntegerLit(1))), BinExpr(>, Id(j), Id(i)), BinExpr(-, Id(j), IntegerLit(1)), BlockStmt([IfStmt(BinExpr(&&, BinExpr(>, ArrayCell(arr, [Id(j)]), ArrayCell(arr, [Id(i)])), BinExpr(<, Id(maxDiff), BinExpr(-, Id(j), Id(i)))), AssignStmt(Id(maxDiff), BinExpr(-, Id(j), Id(i))))]))])), ReturnStmt(Id(maxDiff))]))
+])

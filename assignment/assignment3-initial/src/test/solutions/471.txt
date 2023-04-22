@@ -1,0 +1,1 @@
+Type mismatch in expression: FuncCall(sum, [Id(arr2), IntegerLit(5)])

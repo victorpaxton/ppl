@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([VarDecl(delta, IntegerType), VarDecl(x, IntegerType, IntegerLit(3)), VarDecl(y, IntegerType, IntegerLit(5))]))
+])

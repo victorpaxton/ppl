@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(inc, IntegerType, [Param(num, IntegerType), Param(delta, IntegerType)], None, BlockStmt([ReturnStmt(BinExpr(+, Id(num), Id(delta)))]))
+])
