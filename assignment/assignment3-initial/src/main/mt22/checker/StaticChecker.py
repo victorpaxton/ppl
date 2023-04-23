@@ -133,7 +133,9 @@ class StaticChecker(Visitor):
                 if type(expType) is not ArrayType or not Utils.isSameArrayType(ctx.typ, expType):
                     raise TypeMismatchInVarDecl(ctx)
 
-            if type(expType) is IntegerType:
+            if type(expType) is AutoType:
+                expType = Utils.inferType(o, ctx.init.name, ctx.typ)
+            elif type(expType) is IntegerType:
                 if type(ctx.typ) not in [IntegerType, FloatType]:
                     raise TypeMismatchInVarDecl(ctx)
 
@@ -516,9 +518,6 @@ class StaticChecker(Visitor):
 
     # op: str, left: Expr, right: Expr
 
-    # #################################
-    # NOT INFER TYPE YET
-
     def visitBinExpr(self, ast, param):
         if type(param) is tuple:
             inFunction, inLoop, env = param
@@ -715,7 +714,7 @@ class StaticChecker(Visitor):
 
         # check if name of function is redeclared for an identifier in local
         for decl in env[0]:
-            if decl.name == ast.name:
+            if decl.name == ast.name and type(decl) in [VarDecl, ParamDecl]:
                 raise Undeclared(Function(), ast.name)
 
         for decl in env[-1]:

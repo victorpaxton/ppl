@@ -4,12 +4,12 @@
 sum: function integer (arr: array [4] of integer, n: integer)
 {
     sum, i: integer = 0, 0; // initialize sum
- 
+
     // Iterate through all elements
     // and add them to sum
     for (i = 0, i < n, i+1)
         sum = sum + arr[i];
- 
+
     return sum;
-}   
+}
         

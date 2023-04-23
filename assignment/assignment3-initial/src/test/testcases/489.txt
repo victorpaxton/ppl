@@ -2,21 +2,21 @@
 mulMat: function void (mat1: array [2, 2] of integer, mat2: array [2, 2] of integer)
 {
     rslt: array [2, 2] of integer;
-  
+
     printString("Multiplication of given two matrices is:\n");
-    
+
     i, j ,k : integer = 0, 0, 0;
     for (i = 0, i < 2, i+1) {
         for (j = 0, j < 2, j+1) {
             rslt[i, j] = 0;
-  
+
             for (k = 0, k < 2, k+1) {
                 rslt[i,j] = rslt[i,j] + mat1[i,k] * mat2[k,j];
             }
-  
+
             printInteger(rslt[i, j]);
         }
-  
+
         printString("\n");
     }
 }

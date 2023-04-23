@@ -1119,11 +1119,16 @@ elmntSrch: function integer (arr: array [4] of integer, size: integer, x: intege
         expect = """No entry point"""
         self.assertTrue(TestChecker.test(input, expect, 477))
 
-    # def test_78(self):
-    #     input = """
-    #     """
-    #     expect = """"""
-    #     self.assertTrue(TestChecker.test(input, expect, 478))
+    def test_78(self):
+        input = """
+        foo: function auto () {
+            
+        }
+        a: integer = foo();
+        b: string = foo();
+        """
+        expect = """Type mismatch in Variable Declaration: VarDecl(b, StringType, FuncCall(foo, []))"""
+        self.assertTrue(TestChecker.test(input, expect, 478))
 
     def test_79(self):
         input = """
@@ -1217,14 +1222,14 @@ isPalindrome: function integer (num: integer)
 sum: function integer (arr: array [4] of integer, n: integer)
 {
     sum, i: integer = 0, 0; // initialize sum
- 
+
     // Iterate through all elements
     // and add them to sum
     for (i = 0, i < n, i+1)
         sum = sum + arr[i];
- 
+
     return sum;
-}   
+}
         """
         expect = """No entry point"""
         self.assertTrue(TestChecker.test(input, expect, 484))
@@ -1248,15 +1253,15 @@ sum: function integer (arr: array [4] of integer, n: integer)
 sum: function integer (arr: array [4] of integer, n: integer)
 {
     sum, i: integer = 0, 0; // initialize sum
- 
+
     // Iterate through all elements
     // and add them to sum
     for (i = 0, i < n, i+1)
         sum = sum + arr[i];
- 
+
     return sum;
 }
- 
+
 main: function void ()
 {
     arr: array [4] of integer = { 12, 3, 4, 15 };
@@ -1274,16 +1279,16 @@ main: function void ()
 largest: function integer (arr: array [4] of integer, n: integer)
 {
     i: integer;
-    
+
     // Initialize maximum element
     max: integer = arr[0];
- 
+
     // Traverse array elements from second and
-    // compare every element with current max 
+    // compare every element with current max
     for (i = 1, i < n, i+1)
         if (arr[i] > max)
             max = arr[i];
- 
+
     return max;
 }
         """
@@ -1295,9 +1300,9 @@ largest: function integer (arr: array [4] of integer, n: integer)
     // Recursive function to search x in arr[]
     elmntSrch: function integer (arr: array [4] of integer, size: integer, x: integer) {
         rec: integer;
-    
+
         size = size - 1;
-    
+
         if (size >= 0) {
             if (arr[size] == x)
                 return size;
@@ -1306,7 +1311,7 @@ largest: function integer (arr: array [4] of integer, n: integer)
         }
         else
             return -1;
-    
+
         return rec;
     }
         """
@@ -1318,21 +1323,21 @@ largest: function integer (arr: array [4] of integer, n: integer)
 mulMat: function void (mat1: array [2, 2] of integer, mat2: array [2, 2] of integer)
 {
     rslt: array [2, 2] of integer;
-  
+
     printString("Multiplication of given two matrices is:\\n");
-    
+
     i, j ,k : integer = 0, 0, 0;
     for (i = 0, i < 2, i+1) {
         for (j = 0, j < 2, j+1) {
             rslt[i, j] = 0;
-  
+
             for (k = 0, k < 2, k+1) {
                 rslt[i,j] = rslt[i,j] + mat1[i,k] * mat2[k,j];
             }
-  
+
             printInteger(rslt[i, j]);
         }
-  
+
         printString("\\n");
     }
 }
@@ -1358,7 +1363,7 @@ mulMat: function void (mat1: array [2, 2] of integer, mat2: array [2, 2] of inte
             printInteger(arr[i]);
             printInteger(next);
         }
-    }  
+    }
         """
         expect = """No entry point"""
         self.assertTrue(TestChecker.test(input, expect, 490))
