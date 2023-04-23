@@ -299,11 +299,14 @@ class StaticChecker(Visitor):
         rtype = self.visit(ast.rhs, param)
 
         # print(rtype, ltype)
-
-        if type(ltype) is VoidType:
+        if type(ltype) is AutoType:
+            ltype = Utils.inferType(param[2], ast.lhs.name, rtype)
+        elif type(ltype) is VoidType:
             raise TypeMismatchInStatement(ast)
 
-        if type(rtype) is IntegerType:
+        if type(rtype) is AutoType:
+            rtype = Utils.inferType(param[2], ast.rhs.name, ltype)
+        elif type(rtype) is IntegerType:
             if type(ltype) not in [IntegerType, FloatType]:
                 raise TypeMismatchInStatement(ast)
 

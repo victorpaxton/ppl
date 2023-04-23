@@ -1,2 +1,6 @@
-     
+
+        foo: function void (x: auto) {
+            x = 20;
+            x = "abc";
+        }
         

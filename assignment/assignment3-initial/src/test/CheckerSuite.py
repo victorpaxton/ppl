@@ -1368,12 +1368,16 @@ mulMat: function void (mat1: array [2, 2] of integer, mat2: array [2, 2] of inte
         expect = """No entry point"""
         self.assertTrue(TestChecker.test(input, expect, 490))
 
+    def test_91(self):
+        input = """
+        foo: function void (x: auto) {
+            x = 20;
+            x = "abc";
+        }
+        """
+        expect = """Type mismatch in statement: AssignStmt(Id(x), StringLit(abc))"""
+        self.assertTrue(TestChecker.test(input, expect, 491))
 
-# def test_91(self):
-#     input = """
-#     """
-#     expect = """"""
-#     self.assertTrue(TestChecker.test(input, expect, 491))
 
 # def test_92(self):
 #     input = """
