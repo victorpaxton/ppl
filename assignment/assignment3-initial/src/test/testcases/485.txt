@@ -1,2 +1,8 @@
-     
+
+        main: function void ()
+{
+    arr: array [4] of integer = { 12, 3, 4, 15 };
+    n: integer = 4;
+    printInteger(sum(arr, n));
+}
         

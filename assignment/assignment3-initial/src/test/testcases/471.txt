@@ -4,21 +4,21 @@
 sum: function integer (arr: array [4] of integer, n: integer)
 {
     sum, i: integer = 0, 0; // initialize sum
- 
+
     // Iterate through all elements
     // and add them to sum
     for (i = 0, i < n, i+1)
         sum = sum + arr[i];
- 
+
     return sum;
 }
- 
+
 main: function void ()
 {
     arr: array [4] of integer = { 12, 3, 4, 15 };
     n: integer = 4;
     printInteger(sum(arr, n));
-    
+
     arr2: array [5] of integer = { 12, 3, 4, 15, 5 };
     res: integer = sum(arr2, 5);
 }

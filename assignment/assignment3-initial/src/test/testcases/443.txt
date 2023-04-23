@@ -4,9 +4,9 @@ x: integer = 2;
                 if (x % 2 == 0) {
                     printString("Even positive number");
                 }
-                else 
+                else
                     printString("Odd positive number");
             }
             else if (x + 0)
-                printString("Negative number") ; 
+                printString("Negative number") ;
             }

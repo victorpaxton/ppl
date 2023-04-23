@@ -3,5 +3,5 @@ x: boolean = true && false && (5 == 7);
             if (x) {
             }
             else if (x > 0)
-                printString("Negative number") ; 
+                printString("Negative number") ;
         }

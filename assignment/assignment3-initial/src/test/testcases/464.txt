@@ -2,7 +2,7 @@
         squareRoot: function float (n: float)
     {
         /*We are using n itself as initial approximation
-          This can definitely be improved */
+            This can definitely be improved */
         x, y, e: float = n, 1.0, 0.000001;
         while (x - y > e) {
             x = (x + y) / 2;

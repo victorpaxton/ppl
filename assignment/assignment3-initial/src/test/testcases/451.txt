@@ -5,5 +5,5 @@
         main: function void () {
             result: float = inc;
             printInteger(result);
-        }   
+        }
         

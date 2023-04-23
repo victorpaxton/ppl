@@ -1,0 +1,1 @@
+Type mismatch in statement: AssignStmt(Id(num), BinExpr(/, Id(num), IntegerLit(10)))

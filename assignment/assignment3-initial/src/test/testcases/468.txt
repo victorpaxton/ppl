@@ -3,6 +3,6 @@
         arr2: array [2, 1] of float = {{1.0},{2.0}};
         arr3: array [2, 1] of float = {{1.0},{2}};
         main: function void () {
-            
+
         }
         

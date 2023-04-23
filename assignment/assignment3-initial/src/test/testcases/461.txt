@@ -1,5 +1,5 @@
 
-        
+
         getSum: function integer(n: integer)
     {
         sum: integer = 0;

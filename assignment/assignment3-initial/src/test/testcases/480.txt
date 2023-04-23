@@ -1,2 +1,7 @@
-     
+
+        foo: function integer () inherit goo {
+        }
+        goo: function integer () {
+            super();
+        }
         

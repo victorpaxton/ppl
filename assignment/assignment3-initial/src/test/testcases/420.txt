@@ -1,7 +1,7 @@
 
         a: integer = 3;
         main: function void () {
-            
+
         }
         foo: function integer (a: integer, c: integer) inherit goo {
             super("abc", 4);

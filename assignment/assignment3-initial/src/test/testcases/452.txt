@@ -6,5 +6,6 @@
             inc: integer = 5;
             result: integer = inc(2023, 1);
             printInteger(result);
-        }   
+        }
+
         

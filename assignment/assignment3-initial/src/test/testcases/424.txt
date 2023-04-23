@@ -9,5 +9,5 @@
                 a = a + 1;
             }
             goo: function integer (d: string)  {}
-    
+
         

@@ -1,2 +1,9 @@
-     
+
+        foo: function auto (b: auto){
+            return b;
+}
+main: function void () {
+    x: string = foo(2);
+
+}
         

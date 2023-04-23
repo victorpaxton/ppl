@@ -2,9 +2,9 @@
         // Recursive function to search x in arr[]
 elmntSrch: function integer (arr: array [4] of integer, size: integer, x: integer) {
     rec: integer;
-  
+
     size = size - 1;
-  
+
     if (size >= 0) {
         if (arr[size] == x)
             return size;
@@ -13,7 +13,7 @@ elmntSrch: function integer (arr: array [4] of integer, size: integer, x: intege
     }
     else
         return -1;
-  
+
     return rec;
 }
         
