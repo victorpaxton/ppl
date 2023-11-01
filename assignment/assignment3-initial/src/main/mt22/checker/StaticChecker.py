@@ -235,8 +235,9 @@ class StaticChecker(Visitor):
                     else:
                         raise TypeMismatchInExpression()
 
-                elif firstStatement.name == "preventDefault" and firstStatement.args:
-                    raise InvalidStatementInFunction(ctx.name)
+                elif firstStatement.name == "preventDefault":
+                    if firstStatement.args:
+                        raise InvalidStatementInFunction(ctx.name)
 
                 else:
                     raise InvalidStatementInFunction(ctx.name)
@@ -252,7 +253,7 @@ class StaticChecker(Visitor):
                     if type(firstStatement) is CallStmt:
                         if firstStatement.name in ["super", "preventDefault"]:
                             if firstStatement.args:
-                                raise InvalidStatementInFunction(ctx.name)
+                                raise TypeMismatchInExpression(firstStatement.args[0])
                             flag = 1
 
         # rest statements
@@ -500,6 +501,9 @@ class StaticChecker(Visitor):
                         decl.params[i].typ = argType
                         paramType = Utils.inferType(env, decl.name, argType)
 
+                    if type(argType) is AutoType:
+                        argType = Utils.inferType(env, ast.args[i].name, paramType)
+
                     if type(argType) is IntegerType:
                         if type(paramType) not in [IntegerType, FloatType]:
                             raise TypeMismatchInStatement(ast)
@@ -739,6 +743,9 @@ class StaticChecker(Visitor):
                     if type(paramType) is AutoType:
                         decl.params[i].typ = argType
                         paramType = Utils.inferType(env, decl.name, argType)
+
+                    if type(argType) is AutoType:
+                        argType = Utils.inferType(env, ast.args[i].name, paramType)
 
                     # print("****:", decl.name)
                     # print("******argType: ", argType)

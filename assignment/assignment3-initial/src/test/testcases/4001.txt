@@ -1,0 +1,8 @@
+
+            foo: function integer (inherit a: integer, inherit b: integer) {
+                return a + b;	
+            }
+            foo: function float (inherit a: integer, inherit b: integer) {
+                return a + b;	
+            }
+        
